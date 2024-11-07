@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yash Chauhan's Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <h1 class="logo">Yash Chauhan</h1>
+    <nav>
+      <a href="#home" class="nav-link">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#contactModal" class="nav-link" id="contactLink">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Home Section -->
+  <section id="home" class="section home">
+    <div class="content">
+      <h2>Welcome to My Portfolio</h2>
+      <p>I'm Yash Chauhan, a developer passionate about crafting engaging digital experiences.</p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section about">
+    <div class="content">
+      <h2>About Me</h2>
+      <p>I specialize in frontend and backend web development, creating seamless and modern interfaces.</p>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section projects">
+    <h2>Projects</h2>
+    <div class="project-cards">
+      <div class="project-card">
+        <h3>Medical Waste Management System</h3>
+        <p>The system aims to streamline the process of managing medical waste disposal, ensuring compliance with safety standards and reducing the risk of contamination. It provides features to record, categorize, and track waste from its origin to disposal.</p>
+      </div>
+      <div class="project-card">
+        <h3>Personal Portfolio project</h3>
+        <p>The objective of this project is to create a responsive and interactive personal portfolio website that showcases your skills, projects, and professional background to potential employers and collaborators. The website provides a platform to display your resume, coding projects, technical skills, and contact information.</p>
+      </div>
+      <div class="project-card">
+        <h3>Volume Adjuster</h3>
+        <p>Created a Python application to control and adjust the system's audio volume, providing users with the ability to increase, decrease, or mute the sound programmatically.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Modal -->
+  <div id="contactModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Contact Me</h2>
+
+      <!-- Contact Information -->
+      <div class="contact-info">
+        <p><strong>Email:</strong> <a href="mailto:s.yashchauhan07@gmail.com">s.yashchauhan07@gmail.com</a></p>
+        <p><strong>Phone:</strong> <a href="tel:+919672037336">+91 9672037336</a></p>
+        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/yash-chauhan-961853287" target="_blank">Yash Chauhan on LinkedIn</a></p>
+      </div>
+
+      <!-- Contact Form -->
+      <form id="contactForm">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <textarea id="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+      <p id="responseMessage"></p>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript to handle modal display
+    const contactModal = document.getElementById('contactModal');
+    const contactLink = document.getElementById('contactLink');
+    const closeModal = document.querySelector('.close');
+
+    // Show modal when Contact link is clicked
+    contactLink.onclick = function(event) {
+      event.preventDefault(); // Prevent default anchor behavior
+      contactModal.style.display = 'block';
+    }
+
+    // Close modal when the "close" button is clicked
+    closeModal.onclick = function() {
+      contactModal.style.display = 'none';
+    }
+
+    // Close modal when clicking outside of the modal content
+    window.onclick = function(event) {
+      if (event.target === contactModal) {
+        contactModal.style.display = 'none';
+      }
+    }
+  </script>
+
+</body>
+</html>
